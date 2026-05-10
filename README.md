@@ -1,73 +1,228 @@
-# React + TypeScript + Vite
+# Redux Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A practice project for learning modern Redux with React, TypeScript, Tailwind CSS, and shadcn/ui.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Project Setup Journey
 
-## React Compiler
+This repository documents my Redux learning process from project initialization to UI setup.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# 🛠️ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Redux Toolkit
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 📦 Project Initialization
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 1. Create Vite Project
+
+```bash
+npm create vite@latest
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Project Configuration
+- Framework: React
+- Variant: TypeScript
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 2. Install Dependencies
+
+```bash
+npm install
 ```
+
+---
+
+## 3. Run Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+# 🎨 Tailwind CSS Setup
+
+## Install Tailwind CSS
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+---
+
+## Configure Vite
+
+Add Tailwind plugin inside `vite.config.ts`
+
+```ts
+import tailwindcss from "@tailwindcss/vite";
+
+plugins: [tailwindcss()]
+```
+
+---
+
+## Import Tailwind in CSS
+
+Inside `src/index.css`
+
+```css
+@import "tailwindcss";
+```
+
+---
+
+# 🧩 shadcn/ui Setup
+
+## Install shadcn/ui
+
+Follow official docs for existing Vite project.
+
+---
+
+## Configure TypeScript Paths
+
+### tsconfig.app.json
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+```
+
+---
+
+## Install Node Types
+
+```bash
+npm install -D @types/node
+```
+
+---
+
+## Update vite.config.ts
+
+Add alias configuration.
+
+---
+
+## Initialize shadcn
+
+```bash
+npx shadcn@latest init
+```
+
+### Selected Preset
+- Style: New York
+
+---
+
+# 📁 Generated Structure
+
+```bash
+src/
+ ├── components/
+ │    └── ui/
+ │         └── button.tsx
+ │
+ ├── lib/
+ │    └── utils.ts
+```
+
+---
+
+# 🔥 Git & GitHub Workflow
+
+## Initialize Git
+
+```bash
+git init
+```
+
+---
+
+## Add Files
+
+```bash
+git add .
+```
+
+---
+
+## Commit Changes
+
+```bash
+git commit -m "initial setup vite typescript tailwind shadcn"
+```
+
+---
+
+## Connect GitHub Repository
+
+```bash
+git remote add origin https://github.com/Sumayea104/redux-playground.git
+```
+
+---
+
+## Rename Branch
+
+```bash
+git branch -M main
+```
+
+---
+
+## Push to GitHub
+
+```bash
+git push -u origin main
+```
+
+---
+
+## If Error Occurs
+
+### Unrelated Histories Error
+
+```bash
+git pull origin main --allow-unrelated-histories
+```
+
+Then:
+
+```bash
+git push -u origin main
+```
+
+---
+
+# 📚 Learning Goals
+
+- Understand Redux fundamentals
+- Learn Redux Toolkit
+- State management with React
+- Scalable frontend architecture
+- Type-safe Redux with TypeScript
+
+---
+
+# ✨ Status
+
+🚧 Currently Learning & Building
